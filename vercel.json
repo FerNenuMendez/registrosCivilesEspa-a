@@ -1,22 +1,25 @@
 {
-    "version":2,
-    "builds":[
-        {
-            "src": "src/**/*.js",
-            "use": "@vercel/node@2.5.1"
-        }
+    "version": 2,
+    "builds": [
+      {
+        "src": "src/**/*.js",
+        "use": "@vercel/node@2.5.1"
+      }
     ],
-    "routes":[
-        {
-            "src":"/api/(.*)",
-            "dest":"src/main.js"
-        },
-        {
-            "handle":"filesystem"
-        },
-        {
-            "src":"/(.*)",
-            "dest":"src/main.js"
-        }
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "src/routes/api/apiRouter/$1.js"
+      },
+      {
+        "handle": "filesystem",
+        "src": "/views/(.*)",
+        "dest": "views/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "src/main.js"
+      }
     ]
-}
+  }
+  
