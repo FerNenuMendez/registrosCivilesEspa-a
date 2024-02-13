@@ -1,0 +1,14 @@
+import express from "express";
+import handlebars from 'express-handlebars'
+import { PORT } from "./utils/config/config.js";
+
+const app = express()
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+app.engine('handlebars', handlebars.engine())
+
+const server = app.listen(PORT, () => {
+    console.log(`Servidor conectado en puerto: ${PORT}`)
+})
+
+app.use('/static', express.static('./static'))
