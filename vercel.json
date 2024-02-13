@@ -4,16 +4,19 @@
       {
         "src": "src/**/*.js",
         "use": "@vercel/node@2.5.1"
+      },
+      {
+        "src": "views/**/*",
+        "use": "@vercel/static"
       }
     ],
     "routes": [
       {
         "src": "/api/(.*)",
-        "dest": "src/routes/api/apiRouter.js"
+        "dest": "src/routes/api/apiRouter/$1.js"
       },
       {
-        "src": "/views/(.*)",
-        "dest": "views/$1"
+        "handle": "filesystem"
       },
       {
         "src": "/(.*)",
@@ -21,4 +24,5 @@
       }
     ]
   }
+  
   
