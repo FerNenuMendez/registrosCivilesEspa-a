@@ -12,7 +12,6 @@
         "dest": "src/routes/api/apiRouter/$1.js"
       },
       {
-        "handle": "filesystem",
         "src": "/views/(.*)",
         "dest": "views/$1"
       },
