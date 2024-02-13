@@ -1,6 +1,7 @@
 import express from "express";
 import handlebars from 'express-handlebars'
 import { PORT } from "./utils/config/config.js";
+import { webRouter } from "./routes/web/webRouter.js";
 
 const app = express()
 app.use(express.json())
@@ -12,3 +13,4 @@ const server = app.listen(PORT, () => {
 })
 
 app.use('/static', express.static('./static'))
+app.use(webRouter)
