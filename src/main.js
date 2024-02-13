@@ -15,6 +15,9 @@ const server = app.listen(PORT, () => {
 
 app.use('/static', express.static('./static'))
 
-
 app.use(webRouter)
 app.use('/api', apiRouter)
+
+app.get('/', (req, res) => {
+    res.send('Api funcionando OK')
+})
