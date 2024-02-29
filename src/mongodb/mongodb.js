@@ -3,8 +3,8 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const MONGODB_STRING = `${process.env.MONGODB_STRING}`;
-console.log(MONGODB_STRING)
-await mongoose.connect(MONGODB_STRING)
+const ATLAS_STRING = `${process.env.ATLAS_STRING}`;
+console.log(ATLAS_STRING)
+await mongoose.connect(ATLAS_STRING)
 
 export { RegistroManager } from '../models/registros.js'
