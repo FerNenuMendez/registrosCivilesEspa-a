@@ -10,7 +10,8 @@ app.use(express.urlencoded({ extended: true }))
 app.engine('handlebars', handlebars.engine())
 
 const server = app.listen(PORT, () => {
-    console.log(`Servidor conectado en puerto: ${PORT}`)
+    console.log(`Servidor conectado a AtlasDB`)
+    console.log(`En LocalHost puerto ${PORT}`)
 })
 
 app.use('/static', express.static('./static'))
@@ -19,5 +20,5 @@ app.use(webRouter)
 app.use('/api', apiRouter)
 
 app.get('/', (req, res) => {
-    res.send('Api funcionando OK')
+    res.send('Api registros funcionando OK')
 })
